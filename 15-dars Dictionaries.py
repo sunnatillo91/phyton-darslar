@@ -135,7 +135,7 @@ dav_poy = {
     'turkmaniston':'Ashxobod',
     'turkiya':'istanbul',
     'germaniya':'berlin',
-    'aqsh':'washington',
+    'aqsh':'washington d.c.',
     'koreya':'seul'
     }
 # print("Davlatlar ro'yxati':")
@@ -149,14 +149,17 @@ dav_poy = {
 # # Foydalanuvchidan istalgan davlatni kiritishni so'rang va shu davlatning poytaxtini konsolga chiqaring.
 # # Agar foydalanuvchi lug'atda yo'q davlatni kiritsa, "Bizda bunday ma'lumot yo'q" degan xabarni chiqaring.
 
-# davlat1 = {input("Istalgan davlat nomini kiriting: ")}
-# for dav in dav_poy:
-#     if dav in davlat1:
-#         print(f"{dav.title()} poytaxti {dav_poy[dav].title()}")
-# for poy in davlat1:
-#   if poy not in dav_poy:
-#     print("Bizda bunday ma'lumot yo'q")
+# davlat1 = input("Istalgan davlat nomini kiriting: ").lower()
+# poytaxt = dav_poy.get(davlat1, "Bizda bunday ma'lumot yo'q")
+# print(poytaxt.upper())
     
+country = input("Qaysi davlat poytaxtini bilishni istaysiz? ").lower()
+capital = dav_poy.get(country)  
+if capital == None:
+    print("Bizda bunday ma'lumot yo'q")
+else:
+    print(f"{country.upper()} ning poytaxti, {capital.title()} shahri")    
+
 # Restoran menusi lug'atini tuzing (kamida 10 ta taom-narh juftligini kiriting). Foydalanuvchidan 3 ta 
 # ovqat buyurtma berishni so'rang. Foydalanuvchi kiritgan taomlarni menu bilan solishtiring, agar taom
 # menuda bo'lsa narhini ko'rsating, aks holda "bizda bunday taom yo'q" degan xabarni chiqaring.
@@ -173,14 +176,14 @@ menu = {
         'kfc':50000,
         'doner':20000
         }
-buyurtma = []
-for n  in range(3):
-    buyurtma.append(input(f"{n+1}-ovqat tanlang:"))
-    for taom in menu:
-        if taom in buyurtma:
-            print(f"{taom.title()} {menu[taom]} so'm")
-else:
-    print("Bizda bunday taom yo'q")
+# buyurtma = []
+# for n  in range(3):
+#     buyurtma.append(input(f"{n+1}-ovqat tanlang:"))
+#     for taom in menu:
+#         if taom in buyurtma:
+#             print(f"{taom.title()} {menu[taom]} so'm")
+# else:
+#     print("Bizda bunday taom yo'q")
     
    
     
