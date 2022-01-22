@@ -1,11 +1,7 @@
 """
 Created on Wed Jan 19 08:52:38 2022
 
-Dasturlash asoslari
-
-15-dars Dictionary (Lug'at) lar bilan ishlash
-                    
-@author: Sunnatillo Xayrullaev
+ 
 """
 
 # .items() METODI
@@ -184,6 +180,8 @@ for taom in buyurtma:
        print(f"{taom.title()} {menu[taom]} so'm")
     else:
        print(f"Bizda {taom} yo'q")
+       
+       
     
    
     
