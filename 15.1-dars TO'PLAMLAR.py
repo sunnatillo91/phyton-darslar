@@ -1,7 +1,9 @@
 """
+Created on Wed Jan 20 08:52:38 2022
+
 Dasturlash asoslari
 
-15-dars Dictionary (Lug'at) lar bilan ishlash
+15.1-dars Dictionary (Lug'at) lar bilan ishlash
                     
 @author: Sunnatillo Xayrullaev
 """

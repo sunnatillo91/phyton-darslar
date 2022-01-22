@@ -1,6 +1,11 @@
 """
 Created on Wed Jan 19 08:52:38 2022
 
+Dasturlash asoslari
+
+15-dars Dictionary (Lug'atlar)
+                    
+@author: Sunnatillo Xayrullaev                    
  
 """
 
