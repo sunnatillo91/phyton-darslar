@@ -18,7 +18,7 @@ Dasturlash asoslari
 # ValueError: invalid literal for int() with base 10: '30.5'
 # Yuqoridagi xatoni oldini olish uchun xato yuz berishi mumkin bo'lgan qatorlarni try-except bloki yordamida yozamiz
 
-yosh = input("Yoshingizni kiriting: ")
+# yosh = input("Yoshingizni kiriting: ")
 # try:
 #     yosh = int(yosh)   # xato qaytargan qator
 # except:
@@ -111,12 +111,40 @@ yosh = input("Yoshingizni kiriting: ")
 # except:  # xatoyuz bergan bajariluvchi kod
 #     print("Butun son kiritmadingiz")
 
-while True:
-    yosh = input("Yoshingizni kiriting: ")
-    if yosh.isdigit():
-        yosh = int(yosh)
-        break
-print(f"Siz {2022-yosh} yilda tug'ilgansiz")    
+# while True:
+#     yosh = input("Yoshingizni kiriting: ")
+#     if yosh.isdigit():
+#         yosh = int(yosh)
+#         break
+# print(f"Siz {2022-yosh} yilda tug'ilgansiz")    
 
 # AMALIYOT
-# Quyidagi kod bajarilishida yuzaga kelishi mumkin bo'lganxatolarni ushlab,xatoga mos matnni 
+# Quyidagi kod bajarilishida yuzaga kelishi mumkin bo'lgan xatolarni ushlab,xatoga mos matnni konsolga chiqaring
+# x= input("son kiriting: ")
+# try:
+#     x = int(x)
+#     print(f"x = {x}")
+# except:
+#     print("Butun son kiritmadingiz")    
+# x= input("Yana bir son kiriting: ")
+# try:
+#     x = int(x)
+#     print(f"x = {x}")
+# except:
+#     print("Butun son kiritmadingiz")    
+    
+# Yuqoridagi kodni while sikli yordamida xato qiymat kiritilganda takrorlanadigan qiling.
+
+while True:
+    x= input("son kiriting: ")
+    if x.isdigit():
+        x = int(x)
+        break
+print(f"x ning qiymati {x}")    
+
+while True:
+    x= input("Yana bir son kiriting: ")
+    if x.isdigit():
+        x = int(x)
+        break
+print(f"x ning qiymati {x} ga teng")    
