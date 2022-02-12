@@ -5,7 +5,7 @@ Dasturlash asoslari
 
 21-dars  QIYMAT QAYTARUVCHI FUNKSIYA
                     
-@author: Sunnatillo Xayrullayev
+                 @author: Sunnatillo Xayrullayev
 """
 # Funksiyadan yagona qiymat qaytarish
 # def toliq_ism_yasa(ism, familiya):

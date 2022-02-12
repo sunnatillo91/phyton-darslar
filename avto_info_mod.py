@@ -20,7 +20,7 @@ def avto_info(make, model, rangi, korobka, yili, narxi=None):
     return avto
 
 def avto_kirit():
-    """Foydalanuvchiga avto_info funksiyasi yordamida bir nechta avtolar haqida ma'lumotlarni bitta ro'yxatga 
+                                                                                                                                                                                                                                                                                                                                                          """Foydalanuvchiga avto_info funksiyasi yordamida bir nechta avtolar haqida ma'lumotlarni bitta ro'yxatga 
     joylash imkonini beruvchi funksiya"""
     
     avtolar=[]   # salondagi avtolar uchun bo'sh ro'yxat
