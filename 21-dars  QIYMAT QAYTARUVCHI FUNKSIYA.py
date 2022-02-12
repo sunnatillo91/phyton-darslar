@@ -33,15 +33,15 @@ Dasturlash asoslari
 
 # Funksiyadan lug'at qaytarish
 
-# def avto_info(make, model, rangi, korobka, yili, narxi=None):
-#     avto = {'kompaniya':make,
-#             'model':model,
-#             'rangi':rangi,
-#             'korobka':korobka,
-#             'yil':yili,
-#             'narx':narxi
-#             }
-#     return avto
+def avto_info(make, model, rangi, korobka, yili, narxi=None):
+    avto = {'kompaniya':make,
+            'model':model,
+            'rangi':rangi,
+            'korobka':korobka,
+            'yil':yili,
+            'narx':narxi
+            }
+    return avto
 
 # avto1 = avto_info('GM', 'Malibu', "Qora", 'Avtomat', 2018)
 # avto2 = avto_info('GM', 'Gentra', 'Qora', "Avtomat", 2021)
