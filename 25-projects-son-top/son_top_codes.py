@@ -64,5 +64,5 @@ def play(x=10):
             print("Durrang!")
             
         yana = int(input("Yana o'ynaysizmi?: ha(1)/ yo'q(0)"))    
-            
+             
     
