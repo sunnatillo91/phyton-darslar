@@ -89,6 +89,13 @@ class Avtosalon:
             else:
                 print("Avto kiriting")
                 
+    def remove_avto(self, *qiymat):
+        for avto in qiymat:
+            if isinstance(avto, Avto):
+                self.avtolar.remove(avto)
+            else:
+                print("Avto kiriting")
+                
     # def __add__(self, qiymat):
     #     if isinstance(qiymat, Avtosalon):
     #         yangi_salon = Avtosalon(f"{self.name} {qiymat.name}")
@@ -103,11 +110,51 @@ class Avtosalon:
         elif isinstance(qiymat, Avto):
             self.add_avto(qiymat)
         else:
-            print(f"Avtoosalonga {type(qiymat)} qo'shib  bo'lmaydi")
+            print(f"Avtosalonga {type(qiymat)} qo'shib  bo'lmaydi")
+            
+    def __sub__(self, qiymat):
+        if isinstance(qiymat, Avtosalon):
+            new_salon = Avtosalon(f"{self.name} {qiymat.name}")
+            new_salon.avtolar = self.avtolar - qiymat.avtolar
+            return new_salon
+        elif isinstance(qiymat, Avto):
+            self.remove_avto(qiymat)
+        else:
+            print(f"Avtosalondan {type(qiymat)} ni ayirib bo'lmaydi")
+            
+    # def __call__(self):
+    #     return [avto for avto in self.avtolar]
+
+    # def __call__(self, *param):
+    #     if param:   # agar parametr bo'lsa
+    #         for avto in param:
+    #             self.add_avto(avto)
+    #     else:
+    #         return [avto for avto in self.avtolar]
+            
+# Parametrsiz chaqirish            
+    # def __call__(self):
+    #     return [avto for avto in self.avtolar]
+    
+# Parametr bilan chaqirish    
+    def __call__(self, *param):
+        if param:   # agar parametr bo'lsa
+            for avto in param:
+                self.add_avto(avto)
+        else:
+            return [avto for avto in self.avtolar]
+        
+    def __mul__(self, qiymat):
+        """Ko'paytirish"""
+        if isinstance(qiymat, Avtosalon):
+            yangi_salon
+        
                 
 avto1 = Avto("GM","Malibu","Qora",2020,40000)
 avto2 = Avto("GM","Lacetti","Oq",2021,20000)
 avto3 = Avto("Honda","Accord","Oq", 2017, 40000)
+avto_new = Avto("Mercedes", "E200", "Silver", 2015, 80000)
+
 
 
     
@@ -116,59 +163,80 @@ print(salon1)
 
 salon1.add_avto(avto1, avto2, avto3)
 
-print(salon1[:])
+salon1(avto_new)
+print(salon1())
+# print(salon1[:])
 
 # Obyekt elementini o'zgartirish uchun metod
 
-avto4 = Avto("Tesla","X7","Oq", 2017, 45000)
+# avto4 = Avto("Tesla","X7","Oq", 2017, 45000)
 
-print(salon1[0])
-salon1[0] = avto4
-print(salon1[0])
-
-
-# OPERATORLARNI QAYTA TALQIN QILISH
-
-x, y = 10, 20
-
-print(x+y)
-print(x*5)
-
-# Matnlar
-
-t1 = "Hello"
-t2 = "world"
-print(t1+t2)
-print(t1*5)
-
-# Ro'yxatlar
-
-l1 = [1,2,3]
-l2 = [3,4,5]
-print(l1+l2)
-print(l2*3)
-
-salon1 = Avtosalon("MaxAvto")
-salon2 = Avtosalon("Avto Lider")
-avto1 = Avto("GM","Malibu","Qora",2020,40000)
-avto2 = Avto("GM","Lacetti","Oq",2021,20000)
-avto3 = Avto("Honda","Accord","Oq", 2017, 40000)
-avto4 = Avto("Mazda","6","Qizil",2015,35000)
-avto5 = Avto("Volkswagen","Polo","Qora",2020,30000)
-avto6 = Avto("Toyota","Corola","Silver", 2018, 45000)
-salon1.add_avto(avto1, avto2, avto3)
-salon2.add_avto(avto4, avto5, avto6)
+# # print(salon1[0])
+# # salon1[0] = avto4
+# # print(salon1[0])
 
 
-# Qo'shish operatorini qaytatalqin etish uchun Avtosalon klassimizga __add__ metodin qo'shamiz
+# # OPERATORLARNI QAYTA TALQIN QILISH
+
+# x, y = 10, 20
+
+# print(x+y)
+# print(x*5)
+
+# # Matnlar
+
+# t1 = "Hello"
+# t2 = "world"
+# print(t1+t2)
+# print(t1*5)
+
+# # Ro'yxatlar
+
+# l1 = [1,2,3]
+# l2 = [3,4,5]
+# print(l1+l2)
+# print(l2*3)
+
+# salon1 = Avtosalon("MaxAvto")
+# salon2 = Avtosalon("Avto Lider")
+# avto1 = Avto("GM","Malibu","Qora",2020,40000)
+# avto2 = Avto("GM","Lacetti","Oq",2021,20000)
+# avto3 = Avto("Honda","Accord","Oq", 2017, 40000)
+# avto4 = Avto("Mazda","6","Qizil",2015,35000)
+# avto5 = Avto("Volkswagen","Polo","Qora",2020,30000)
+# avto6 = Avto("Toyota","Corola","Silver", 2018, 45000)
+# salon1.add_avto(avto1, avto2, avto3)
+# salon2.add_avto(avto4, avto5, avto6)
+
+# print(salon1(avto1))
+# # Qo'shish operatorini qaytatalqin etish uchun Avtosalon klassimizga __add__ metodin qo'shamiz
  
-salon3 = salon1 + salon2
+# salon3 = salon1 + salon2
 
-print(salon3)
-print(salon3[:])
+# # print(salon3)
+# # print(salon3[:])
 
-# Qo'shish operatori yordamida salonga yangi Avto qo'shish imkonini ham yaratishimiz mumkin
+# # Qo'shish operatori yordamida salonga yangi Avto qo'shish imkonini ham yaratishimiz mumkin
 
-avto7 = Avto("BMW","X7","Qora", 2015, 75000)
-salon1+avto7
-print(salon1[:])
+# avto7 = Avto("BMW","X7","Qora", 2015, 75000)
+# # salon1+avto7
+# # print(salon1[:])
+# # salon1-avto3
+# # print(salon1[:])
+
+# #  Operator     Metod
+# #  Qo'shish     __add__
+# #  Ayirish      __sub__
+# #  Ko'paytirish  __mul__
+# #  Daraja       __pow__
+# #  Bo'lish      __div__   
+
+# # OBYEKTNI CHAQIRISH    __call__ metodi
+
+# # Parametrsiz chaqirish
+
+# # def __call__(self):
+# #     return [avto for avto in self.avtolar]
+
+# print(salon1())
+
