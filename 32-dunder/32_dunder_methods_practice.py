@@ -57,30 +57,62 @@ talaba2 = Talaba("Salim", "Sharipov", "AC4564543", 1998, 657897, 3)
 print(talaba1>talaba2)
 
 class Fan:
-    def __init__(self, nomi, dars_soati):
+    def __init__(self, nomi):
         self.nomi = nomi
-        self.dars_soati = dars_soati
         self.talabalar = []
         
-    def add_student(self, talaba):
-        if isinstance(talaba, Talaba):
-            self.talabalar.append(talaba)
-        else:
-            print("Talaba obyektini kiriting")
-            
-        
-    def __getitem__(self):
-        return f"{self.nomi} {self.dars_soati}"
+    def add_student(self, *qiymat):
+        for talaba in qiymat:
+            if isinstance(talaba, Talaba):
+                self.talabalar.append(talaba)
+            else:
+                print("Talaba obyektini kiriting")         
     
-    def __setitem__(self, yangi_soat):
-        return f"{self.yangi_soat}"
+    def __getitem__(self, index):
+        return self.talabalar[index]
+    
+    def __setitem__(self, index, qiymat):
+        self.talabalar[index] = qiymat
+    
+    def __len__(self):
+        return len(self.talabalar)
+    
+    def __add__(self, *qiymat):
+        if isinstance(qiymat, Fan): 
+            yangi_fan = Fan(f"{self.nomi} {qiymat.nomi}")
+            yangi_fan.talabalar = self.talabalar + qiymat.talabalar
+            return yangi_fan
+        elif isinstance(qiymat, Talaba):
+            self.add_student(qiymat)        
+        else:
+            print(f"Fan ga {type(qiymat)} qo'shib bo'lmaydi")
+            
+    def __repr__(self):
+        return f"Fan: {self.nomi}"
+    
+    def __call__(self, *param):
+        if param:
+            for talaba in param:
+                self.add_student(talaba)
+        else:
+            return [talaba for talaba in self.talabalar]
 
+
+fan1 = Fan("Matematika")
+fan2 = Fan("Astronomiya")
 
 talaba1 = Talaba("Olim", "Hayitov", "AC4564652", 1995, 654897, 4)
 talaba2 = Talaba("Salim", "Sharipov", "AC4564543", 1998, 657897, 3)
+talaba3 = Talaba("Mehridin", "Boymonov", "AB4532543", 1992, 448897, 2)
 
-math = Fan("matematika", 24)
-
-talabalar.add_student(talaba1)
+fan2.add_student(talaba1)
+# for talaba in [talaba1, talaba2]:
+#     fan2.add_student(talaba)
     
+# fan2[0] = Talaba("Mehriddin", "Boymonov", "AB456532", 1992, 336655)
+print(fan2[0])
+    
+fan1.add_student(talaba1, talaba2, talaba3)
+fan3 = fan1+fan2
+print(fan3)
         
