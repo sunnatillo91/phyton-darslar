@@ -16,16 +16,10 @@ Author: Sunnatillo Xayrullayev
 import pickle
 
 talaba1 = {'ism':'hasan',   'familiya':'husanov',   'tyil':'2003',  'kurs':'2'}
-talaba2 = {'ism':'Tolib',   'familiya':'usmonv',   'tyil':'2005',  'kurs':'2'}
+talaba2 = {'ism':'Tolib',   'familiya':'usmonv',   'tyil':'2005',  'kurs':'3'}
 
-faylnomi = 'new_file.txt'       # ochilayotgan fayl nomi
-ism = 'Olimjon Hasanov'
-tyil = 2004
-with open (faylnomi, 'w') as fayl:
-    fayl.write(ism+'\n')   #faylga yozilayotgan matn
-    fayl.write(str(tyil)+'\n')
+with open ('talaba1', 'wb') as file:
+    pickle.dump(talaba1, file)
 
-faylnomi = "new_file.txt"
-with open (faylnomi, 'a') as fayl:
-    fayl.write('Alijon Valiyev\n')
-    fayl.write('2000')
+with open ('talaba2.pkl', 'wb') as file:
+    pickle.dump(talaba2, file)
