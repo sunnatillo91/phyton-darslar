@@ -76,14 +76,61 @@ except FileNotFoundError:
     print(f"Kechirasiz, {filename} fayli mavjud emas. Boshqa fayl tanlang.")
     
 # BIR NECHTA XATOLARNI USHLASH
-n = input("Butun son kiriting: ")
-try:
-    n = int(n)
-    x = 20/n
-except ValueError:
-    print("Butun son kiritmadingiz")
-except ZeroDivisionError:
-    print("0 ga bo'lish mumkin emas")
-else:
-    print(f"x = {x}")
+# n = input("Butun son kiriting: ")
+# try:
+#     n = int(n)
+#     x = 20/n
+# except ValueError:
+#     print("Butun son kiritmadingiz")
+# except ZeroDivisionError:
+#     print("0 ga bo'lish mumkin emas")
+# else:
+#     print(f"x = {x}")
     
+# XATOLARNI KO'RSATMAY O'TISH
+# import json 
+
+# files = ['talaba1.json', 'talaba2.json', 'talab3.json', 'talaba4.json']
+# for filename in files:
+#     try:
+#         with open(filename) as f:
+#             talaba = json.load(f)
+#     except FileNotFoundError:
+#         print(f"{filename} mavjud emas")
+        
+#     else:
+#         print(talaba['ism'])
+
+
+import json 
+
+files = ['talaba1.json', 'talaba2.json', 'talab3.json', 'talaba4.json']
+for filename in files:
+    try:
+        with open(filename) as f:
+            talaba = json.load(f)
+    except FileNotFoundError:
+        pass
+        
+    else:
+        print(talaba['ism'])
+        
+        
+# XATOLARNING OLDINI OLISH
+
+while True:
+    yosh = input("Yoshingizni kiriting: ")
+    if yosh.isdigit():
+        yosh = int(yosh)
+        break
+    
+print(f"Siz {2022-yosh} yilda tug'ilgansiz")
+    
+
+
+
+
+
+
+
+
