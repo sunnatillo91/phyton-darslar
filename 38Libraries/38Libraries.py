@@ -66,10 +66,6 @@ sekundlar = farq.seconds
 minutlar = int(sekundlar/60)
 soatlar = int(minutlar/60)
 
-print(f"Futbol boshlanishiga {sekundlar} sekund qoldi")
-print(f"Futbol boshlanishiga {minutlar} minut qoldi")
-print(f"Futbol boshlanishiga {soatlar} soat qoldi")
-bugun = dt.date.today()
-openbudget = dt.date(2022, 8, 3)
-farq =openbudget-bugun
-print(f"Ochiq byudjet registratsiyasiga {farq.days} kun qoldi")
+print(f"Open budget tugashiga {farq.days} kun, {soatlar} soat {minutlar} minut  {sekundlar} sekund qoldi")
+
+

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Tue Apr 26 06:34:12 2022
 
@@ -68,30 +67,30 @@ print(f"{inson.get_info()}. {inson.get_age(2022)} yoshda.")
 
 # POLIMORFIZM-SUPER KLASS METODLARINI QAYTA YOZISH
 
-class Talaba(Shaxs):
-    """Talaba klassi"""
-    def __init__(self, ism, familiya, pasport, tyil, id):
-        """Talabaning xususiyatlari"""
-        super().__init__(ism, familiya, pasport, tyil)
-        self.idraqam = id
-        self.bosqich = 1
+# class Talaba(Shaxs):
+#     """Talaba klassi"""
+#     def __init__(self, ism, familiya, pasport, tyil, id):
+#         """Talabaning xususiyatlari"""
+#         super().__init__(ism, familiya, pasport, tyil)
+#         self.idraqam = id
+#         self.bosqich = 1
         
-    def get_id(self):
-        """Talabaning id raqami"""
-        return self.idraqam
+#     def get_id(self):
+#         """Talabaning id raqami"""
+#         return self.idraqam
     
-    def get_bosqich(self):
-        """Talabaning bosqichi"""
-        return self.bosqich
+#     def get_bosqich(self):
+#         """Talabaning bosqichi"""
+#         return self.bosqich
     
-    def get_info(self):
-        """Talaba haqida ma'lumot"""
-        info = f"{self.ism} {self.familiya}. Pasport: {self.pasport}."
-        info += f" {self.tyil}-yilda tug'ilgan. ID: {self.idraqam}, {self.bosqich} - bosqich talabasi"
-        return info
+#     def get_info(self):
+#         """Talaba haqida ma'lumot"""
+#         info = f"{self.ism} {self.familiya}. Pasport: {self.pasport}."
+#         info += f" {self.tyil}-yilda tug'ilgan. ID: {self.idraqam}, {self.bosqich} - bosqich talabasi"
+#         return info
     
-talaba = Talaba("Abror", "To'laganov", "AB321456", 1995, "008356")
-print(talaba.get_info())
+# talaba = Talaba("Abror", "To'laganov", "AB321456", 1995, "008356")
+# print(talaba.get_info())
 
 
 # OBYEKT ICHIDA OBYEKT
