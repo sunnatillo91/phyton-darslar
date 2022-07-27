@@ -20,3 +20,8 @@ with open(filename) as f:
 print(bemor)
 print(5)
 pprint(bemor)
+
+import requests
+r = requests.get('https://api.github.com')
+pprint(r.json())
+
