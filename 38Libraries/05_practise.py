@@ -63,9 +63,11 @@ print(f"Qurbon hayitiga {farq2.days} kun qoldi")
 
 def tkun(tyil, bugun):
     """Tug'ilgan kundan bugungacha o'tgan vaqtni qaytaruvchi funksiya"""
-    farq = tyil-bugun
+    farq = bugun-tyil
     print(f"Tug'ilgan kundan bugungacha o'tgan vaqt: {farq}")
 
 tyil = dt.date(1991, 6, 20)
 bugun = dt.date.today()
+
+
 print(tkun(tyil, bugun))
